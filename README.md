@@ -13,6 +13,15 @@ The most valuable lesson wasn't merely getting the login to work. It was isolati
 
 **Evidence:** On October 18, 2026, the Descope Flow Runner displayed **“Authentication Completed!”**, showed a session response, and the Descope Users screen subsequently displayed an **Active** user with **OIDC** indicated. The user details associated that login with the intended tenant. This evidence supports one successful integration run; it does not establish security assurance, production suitability, or complete negative-test coverage.
 
+## Independent technical writing samples
+
+In addition to the hands-on integration case study, this repository includes an independent long-form writing sample that demonstrates developer-facing explanations, source verification, SEO planning, and careful treatment of untested guidance.
+
+- **[OIDC Token Exchange Failures: A Layer-by-Layer Troubleshooting Guide for B2B SSO](writing-samples/oidc-token-exchange-troubleshooting.md)** — source-audited, approximately 3,000-word practical diagnostic article built partly from this lab's evidence; not an official Descope publication.
+- **[Editorial and SEO brief](writing-samples/oidc-token-exchange-editorial-brief.md)** — intended audience, search-intent and keyword hypotheses (not measured SEO data), source strategy, article differentiation, and verification limitations.
+
+**Independent work:** Neither the case study nor the writing sample was commissioned, reviewed, or endorsed by Pepper or Descope. The article is not an end-to-end validated production tutorial.
+
 ## Architecture
 
 ![OIDC SSO logical architecture showing browser, Descope, ngrok, Nginx and Keycloak connections](diagrams/architecture.svg)
