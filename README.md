@@ -15,10 +15,12 @@ The most valuable lesson wasn't merely getting the login to work. It was isolati
 
 ## Independent technical writing samples
 
-In addition to the hands-on integration case study, this repository includes an independent long-form writing sample that demonstrates developer-facing explanations, source verification, SEO planning, and careful treatment of untested guidance.
+In addition to the hands-on integration case study, this repository includes independent long-form writing samples that demonstrate developer-facing explanations, source verification, SEO planning, and careful treatment of untested guidance.
 
 - **[OIDC Token Exchange Failures: A Layer-by-Layer Troubleshooting Guide for B2B SSO](writing-samples/oidc-token-exchange-troubleshooting.md)** — source-audited, approximately 3,000-word practical diagnostic article built partly from this lab's evidence; not an official Descope publication.
 - **[Editorial and SEO brief](writing-samples/oidc-token-exchange-editorial-brief.md)** — intended audience, search-intent and keyword hypotheses (not measured SEO data), source strategy, article differentiation, and verification limitations.
+- **[JIT vs. SCIM Provisioning for B2B SaaS: Onboarding, Offboarding, and Access Control](writing-samples/jit-vs-scim-provisioning-b2b-saas.md)** — independent comparison and implementation decision guide covering tenant-aware provisioning, identity matching, group-to-role mapping, the two-clock offboarding model, and API-level access enforcement; hypothetical SCIM examples are clearly separated from our observed JIT sign-in.
+- **[JIT vs. SCIM editorial and SEO brief](writing-samples/jit-vs-scim-editorial-brief.md)** — target readers, search-intent and keyword hypotheses (not measured SEO data), differentiation, sources, editorial reasoning, and explicit verification limitations.
 
 **Independent work:** Neither the case study nor the writing sample was commissioned, reviewed, or endorsed by Pepper or Descope. The article is not an end-to-end validated production tutorial.
 
