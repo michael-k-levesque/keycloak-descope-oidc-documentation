@@ -15,29 +15,9 @@ The most valuable lesson wasn't merely getting the login to work. It was isolati
 
 ## Architecture
 
-```mermaid
-flowchart TB
-  B["Browser (test user)"]
-  subgraph Cloud["Descope cloud"]
-    direction LR
-    F["Interactive SSO Flow"]
-    S["Descope session + JIT user"]
-    F --> S
-  end
-  T["ngrok HTTPS tunnel"]
-  subgraph Local["Local lab (Docker / WSL 2)"]
-    direction LR
-    N["Nginx OIDC proxy"]
-    K["Keycloak: descope-lab realm"]
-    N --> K
-  end
-  B <-->|"Flow start and callback"| F
-  B -->|"Browser authorization and sign-in"| T
-  F -->|"Back-channel code-to-token exchange"| T
-  T --> N
-```
+![OIDC SSO logical architecture showing browser, Descope, ngrok, Nginx and Keycloak connections](diagrams/architecture.svg)
 
-Fig. 1 — Logical trust and routing boundaries. [Mermaid source](diagrams/architecture.mmd). This is not a captured packet trace. The tunnel is a temporary development ingress, not a recommended production IdP endpoint.
+Fig. 1 — Logical trust and routing boundaries. The [presentation SVG](diagrams/architecture.svg) is designed for consistent padding and accessible, unobstructed labels; an [editable Mermaid logical sketch](diagrams/architecture.mmd) is also available. This is not a captured packet trace. The tunnel is a temporary development ingress, not a recommended production IdP endpoint.
 
 ## The implemented pieces
 
