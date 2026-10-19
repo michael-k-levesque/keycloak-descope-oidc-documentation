@@ -17,16 +17,26 @@ In particular, HTTPS to ngrok does not by itself establish end-to-end transport 
 
 The exact temporary ngrok hostname is omitted from the public docs even though its previous existence was visible in development screenshots. Don't repurpose that hostname as a durable setup URL.
 
-## GitHub publication gate
+## Publication review (2026-10-19)
 
-- [ ] Review these statements and confirm author approval
-- [ ] Review the exact Git repository contents **and full reachable history**, not just the current working tree, for secrets, personal data and old screenshots
-- [ ] Verify screenshot rights and redact all captured session/token material before adding images
-- [ ] Confirm current Descope/Keycloak configuration syntax and versions if converting the case study into a runnable tutorial
-- [ ] Confirm whether redistributing exported Flow JSON is permitted; this candidate intentionally omits it
-- [ ] Validate Mermaid diagrams render on GitHub; confirm Markdown links resolve
-- [ ] Obtain final technical review of material claim/evidence relationships
-- [ ] Avoid suggesting a production-grade deployment or an official affiliation with Pepper or Descope
+This is a **technical case study**, not an installable product or an independently audited security reference. The private GitHub repository was reviewed before changing its visibility.
+
+| Review item | Result / boundary |
+|---|---|
+| Repository file inventory | 12 files on `main` verified |
+| History review | Six commits reviewed; 15 unique text/blob revisions scanned for targeted credential, JWT, temporary tunnel hostname, and personal-path patterns; no matches found |
+| Screenshots and raw sessions | No screenshots, tokens, captured traffic, or user-profile exports are included |
+| Original Descope Flow JSON | Intentionally withheld; no redistribution permission assumed |
+| Architecture figure | Approved vector SVG visually checked in GitHub; editable Mermaid source retained |
+| Supporting Mermaid diagrams | Source and corresponding Markdown blocks reconciled; manual rendered-layout confirmation remains a presentation check |
+| Source and claim boundaries | Observations distinguished from protocol guidance, unverified recovery, and production hardening |
+| Public visibility | Requires repository owner to choose **Public** in GitHub settings |
+
+A targeted text scan is not a guarantee against every secret or privacy issue; review future commits and additions independently. Final publication approval rests with the author.
+
+### Additional work for a reproducible deployment guide
+
+If this case study is expanded into a copy-and-run tutorial, first capture supported Keycloak/Descope versions, exact confidential-client redirect settings, reviewed proxy allowlist, secret-management procedure, fresh-environment setup and negative-path tests. **These are not claimed as completed in the present case study.** Do not add raw test screenshots without confirming rights and removing all session/token material.
 
 ## Production concerns (out of scope)
 
