@@ -1,0 +1,17 @@
+flowchart LR
+  subgraph Cloud[Descope cloud]
+    F[Interactive SSO Flow]
+    S[Descope session and user record]
+    F --> S
+  end
+  subgraph Local[Local development host / Docker]
+    N[Nginx OIDC route proxy]
+    K[Keycloak realm: descope-lab]
+    N --> K
+  end
+  B[Browser] -->|Start Flow with tenant context| F
+  F -->|Browser redirect| B
+  B -->|OIDC authorization and sign-in over HTTPS| T[ngrok HTTPS tunnel]
+  F -->|Server-to-server token exchange| T
+  T --> N
+  B <-->|Browser callback and Flow completion| F

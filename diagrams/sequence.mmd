@@ -1,0 +1,24 @@
+sequenceDiagram
+  autonumber
+  actor U as Test user
+  participant B as Browser
+  participant D as Descope Flow / OIDC handler
+  participant T as ngrok HTTPS + Nginx proxy
+  participant K as Keycloak (descope-lab)
+  U->>B: Start test Flow with tenant context
+  B->>D: Start SSO action
+  D-->>B: Redirect to IdP authorization URL
+  B->>T: GET Keycloak authorization/login path
+  T->>K: Proxy request to Keycloak
+  K-->>T: Login response
+  T-->>B: Keycloak sign-in page
+  U->>B: Submit realm test-user credentials
+  B->>T: Submit login via public IdP origin
+  T->>K: Proxy authentication request
+  K-->>B: Authorization response / browser redirect
+  B->>D: Return authorization code via registered callback
+  D->>T: Back-channel token request + client authentication
+  T->>K: Forward token request
+  K-->>D: Token response via reverse path
+  D->>D: Process IdP result; create user/session
+  D-->>B: Flow completion and Descope session response

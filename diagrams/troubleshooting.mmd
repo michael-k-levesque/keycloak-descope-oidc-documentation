@@ -1,0 +1,10 @@
+flowchart TD
+  A[Start Descope SSO Flow] --> B{Browser reaches Keycloak login?}
+  B -- No --> C[Check tenant input, discovery issuer, tunnel and proxy routes]
+  B -- Yes --> D{Return to Descope successful?}
+  D -- Yes --> E[Confirm session response and user record]
+  D -- No --> F[Inspect Descope Runner and Keycloak event log]
+  F --> G{CODE_TO_TOKEN_ERROR present?}
+  G -- Yes --> H[Compare client identity, auth method, exact redirect and stored secret]
+  G -- No --> I[Review callback, users, Flow errors and session state]
+  H --> J[Change one variable, rerun, preserve new evidence]
