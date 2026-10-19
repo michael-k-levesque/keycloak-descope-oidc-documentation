@@ -1,0 +1,20 @@
+# Secrets, private records, backups, and raw authentication evidence
+*.env
+.env*
+*.pem
+*.key
+*.p12
+*.pfx
+*.sqlite
+*.mv.db
+*.tar
+*.tar.gz
+*.sha256
+*client-secret*
+*private*
+**/raw-captures/**
+**/tokens/**
+**/credentials/**
+**/INTERNAL_CANON_AND_EVIDENCE/**
+.DS_Store
+Thumbs.db
