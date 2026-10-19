@@ -15,10 +15,12 @@ sequenceDiagram
   U->>B: Submit realm test-user credentials
   B->>T: Submit login via public IdP origin
   T->>K: Proxy authentication request
-  K-->>B: Authorization response / browser redirect
+  K-->>T: Authorization response / browser redirect
+  T-->>B: Forward redirect to browser
   B->>D: Return authorization code via registered callback
   D->>T: Back-channel token request + client authentication
   T->>K: Forward token request
-  K-->>D: Token response via reverse path
+  K-->>T: Token response
+  T-->>D: Forward token response
   D->>D: Process IdP result; create user/session
   D-->>B: Flow completion and Descope session response
