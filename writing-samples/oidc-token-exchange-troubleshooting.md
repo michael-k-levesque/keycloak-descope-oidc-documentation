@@ -1,7 +1,6 @@
 # OIDC Token Exchange Failures: A Layer-by-Layer Troubleshooting Guide for B2B SSO
 
-> **Independent technical writing sample · October 2026**  
-> Based in part on a Keycloak–Descope integration lab. This article is not official Descope documentation or a claim of production certification.
+By Michael K. Levesque
 
 A user enters the correct credentials at an identity provider (IdP). The login page accepts them. The browser follows the redirect back to the relying party’s callback. Then, instead of a session, the application reports **“Token exchange with SSO provider failed.”**
 
