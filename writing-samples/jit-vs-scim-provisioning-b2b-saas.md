@@ -1,9 +1,6 @@
 # JIT vs. SCIM Provisioning for B2B SaaS: Onboarding, Offboarding, and Access Control
 
-**Author: Michael K. Levesque**  
-*Independent technical writing sample · October 2026*
-
-*This independent portfolio article is not commissioned, reviewed, or approved by Descope or Pepper Content. Its product descriptions draw on published documentation. One Keycloak–Descope OIDC sign-in with JIT user creation was observed in our nonproduction lab; SCIM operations and deprovisioning were not lab-tested.*
+By Michael K. Levesque
 
 An employee leaves a customer's company on Friday. IT disables the person's directory account, yet your SaaS application still displays an active user—and an earlier application session may still authorize requests.
 
